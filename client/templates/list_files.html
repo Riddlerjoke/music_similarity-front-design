@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <main class="container">
+    <h3>list of files in S3 bucket</h3>
+    <!-- for each list of files, display a ul/li of the mp3 files -->
+    {% for artist_files in contents %}
+    <article style="margin-top: 50px">
+      <h4>{{ artist_files[0].split('/')[2] }}</h4>
+      <ul>
+        {% for file in artist_files %}
+        <li><a href="{{ url_for('recommendations', file_path=file) }}">{{ file }}</a></li>
+        {% endfor %}
+      </ul>
+    </article>
+    {% endfor %}
+  </main>
+{% endblock %}
