@@ -24,7 +24,7 @@ tensorflow-estimator
 tensorflow-io-gcs-filesystem
 
 essentia-tensorflow
-openl3
+# openl3
 
 music-tag>=0.4.3
 
