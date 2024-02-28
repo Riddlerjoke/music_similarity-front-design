@@ -32,6 +32,7 @@ app = FastAPI(
     description="This is a music recommendation system using FastAPI and Pydantic",
     version="1.0.0",
 )
+
 URI = os.getenv("MILVUS_URI")
 TOKEN = os.getenv("MILVUS_TOKEN")
 BUCKET = os.getenv("BUCKET")
@@ -52,6 +53,7 @@ session = boto3.Session(
 )
 s3 = session.client("s3")
 
+
 def get_list_of_mp3_paths_from_s3():
     response = s3.list_objects_v2(Bucket=BUCKET)
     mp3_paths = []
@@ -59,16 +61,6 @@ def get_list_of_mp3_paths_from_s3():
         if obj["Key"].endswith(".mp3"):
             mp3_paths.append(obj["Key"])
     return mp3_paths
-
-
-# @app.middleware("http")
-# async def check_secret_key(request: Request, call_next):
-#     secret_key = request.headers.get('X-Secret-Key')
-#     if not secret_key or secret_key != SHARED_SECRET_KEY:
-#         raise HTTPException(status_code=403, detail="Invalid secret key")
-
-#     response = await call_next(request)
-#     return response
 
 
 @app.get("/", tags=["Home"])

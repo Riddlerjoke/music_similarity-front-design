@@ -27,7 +27,6 @@ essentia-tensorflow
 # openl3
 
 music-tag>=0.4.3
-
-
+python-dotenv
 boto3
 awscli

@@ -19,3 +19,5 @@ Elle permet de lire le contenu du S3 et de query Milvus
 - la webapp flask tourne en local et contacte l'api.
 
 - js est banni (pour l'instant)
+
+### model trouvé sur https://essentia.upf.edu/models.html
