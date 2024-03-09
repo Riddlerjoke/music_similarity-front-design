@@ -1,7 +1,5 @@
 fastapi 
 uvicorn 
-boto3 
-awscli
 pymilvus 
 numpy 
 pydantic 
