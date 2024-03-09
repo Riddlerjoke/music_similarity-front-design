@@ -14,7 +14,7 @@ et le dataset
 ## pour l'instant
 
 - l'api tourne toute seule dans un conteneur.
-Elle permet de lire le contenu du S3 et de query Milvus
+Elle permet de lire le contenu du dataset (plus tard du S3) et de query Milvus
 
 - la webapp flask tourne en local et contacte l'api.
 
