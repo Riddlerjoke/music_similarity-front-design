@@ -111,9 +111,9 @@ def check_file_info(mp3_file_path):
                 or len(file_info.get("artist")) == 0
             ):
                 return False
-            if len(file_info.get("predictions_87", [])) != 87:
+            if file_info.get("predictions_87") is None or len(file_info.get("predictions_87", [])) != 87:
                 return False
-            if len(file_info.get("embedding_512", [])) != 512:
+            if file_info.get("embedding_512") is None or len(file_info.get("embedding_512", [])) != 512:
                 return False
             if not isinstance(file_info.get("top_5_genres"), list) or len(file_info.get("top_5_genres")) != 5:
                 return False
