@@ -1,7 +1,6 @@
 from models import DatabaseManager
 
-from urllib.parse import unquote
-from flask import Flask, render_template, redirect, url_for, request
+from flask import Flask, render_template, redirect, url_for
 import requests
 from requests.exceptions import RequestException
 

@@ -2,8 +2,7 @@ import os
 from fastapi import FastAPI, HTTPException
 import uvicorn
 from pymilvus import connections, Collection
-import numpy as np
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 from typing import List, Dict, Optional
 
 app = FastAPI(
