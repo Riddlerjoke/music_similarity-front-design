@@ -1,11 +1,18 @@
 "use client";
 
-import React from 'react';
-import {useRouter} from "next/navigation";
-import {twMerge} from "tailwind-merge";
-import {RxCaretLeft, RxCaretRight} from "react-icons/rx";
-import {HiHome} from "react-icons/hi";
-import {BiSearch} from "react-icons/bi";
+import { useRouter } from "next/navigation"
+import { twMerge } from "tailwind-merge"
+import { RxCaretLeft, RxCaretRight } from "react-icons/rx"
+import { HiHome } from "react-icons/hi"
+import { BiSearch } from "react-icons/bi"
+import { FaUserAlt } from "react-icons/fa"
+import React from "react"
+
+
+import Button from "./Button"
+// import useAuthModal from "@/hooks/useAuthModal"
+// import { useUser } from "@/hooks/useUser"
+// import usePlayer from "@/hooks/usePlayer"
 
 interface HeaderProps {
     children: React.ReactNode;
@@ -27,7 +34,7 @@ const Header: React.FC<HeaderProps> = ({
         `
             , className
         )}>
-            <div className={twMerge(`flex justify-between md:hidden gap-x-4 items-center`)}>
+            <div className={twMerge(`flex justify-between gap-x-4 items-center`)}>
                 <div className={twMerge(`flex items-center gap-x-4`)}>
                     <div className={twMerge(`flex-col justify-start gap-x-4`)}>
                         <button
@@ -50,15 +57,30 @@ const Header: React.FC<HeaderProps> = ({
                 <div className={twMerge(`
                     flex-col-reverse justify-end gap-x-4
                     `)}>
-                    <button
+                    <Button
                         onClick={handlelogout}
                         className={twMerge(`
                             bg-pink-600 border-2 border-white text-white rounded-xl px-4 py-2 hover:opacity-75 transition
-                            `)}
-                    >
+                            `)}>
                         Logout
-                    </button>
+                        <FaUserAlt/>
+                    </Button>
                 </div>
+
+                <div className={twMerge(`flex-col justify-end gap-x-4`)}>
+
+                    <div>
+                            <Button className="bg-transparent text-neutral-300 font-medium px-4" >
+                                Sign up
+                            </Button>
+                        </div>
+                        <div>
+                            <Button className="bg-white px-4 py-2" >
+                                Log in
+                            </Button>
+                        </div>
+                </div>
+
             </div>
             <div className={twMerge(`
             flex justify-between items-center
